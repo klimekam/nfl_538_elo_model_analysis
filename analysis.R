@@ -56,7 +56,7 @@ binomial_fit_validation <- all_predicted_observed %>%
     )
   )
   ) %>%
-  unnest() %>%
+  unnest(cols = c(data, binomial)) %>%
   select(fav_538_prob, games, wins, observed, conf.low, conf.high)
 
 binomial_fit_validation %>%
